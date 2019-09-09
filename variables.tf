@@ -9,6 +9,26 @@ variable "requestor_vpc_id" {
   default     = ""
 }
 
+variable "requestor_cidr_blocks" {
+  type        = list(string)
+  description = "Requestor CIDR blocks"
+}
+
+variable "requestor_route_table_ids" {
+  type        = list(string)
+  description = "Requestor route table IDs"
+}
+
+variable "requestor_cidr_blocks_count" {
+  type        = number
+  description = "Requestor CIDR blocks count"
+}
+
+variable "requestor_route_tables_count" {
+  type        = number
+  description = "Requestor route tables count"
+}
+
 variable "requestor_vpc_tags" {
   type        = map(string)
   description = "Requestor VPC tags"
@@ -19,6 +39,26 @@ variable "acceptor_vpc_id" {
   type        = string
   description = "Acceptor VPC ID"
   default     = ""
+}
+
+variable "acceptor_cidr_blocks" {
+  type        = list(string)
+  description = "Acceptor CIDR blocks"
+}
+
+variable "acceptor_route_table_ids" {
+  type        = list(string)
+  description = "Acceptor route table IDs"
+}
+
+variable "acceptor_cidr_blocks_count" {
+  type        = number
+  description = "Acceptor CIDR blocks count"
+}
+
+variable "acceptor_route_tables_count" {
+  type        = number
+  description = "Acceptor route tables count"
 }
 
 variable "acceptor_vpc_tags" {
@@ -74,4 +114,3 @@ variable "tags" {
   default     = {}
   description = "Additional tags (e.g. map('BusinessUnit`,`XYZ`)"
 }
-
